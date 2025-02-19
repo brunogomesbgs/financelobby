@@ -61,12 +61,12 @@ services:
       - "3306:3306"
     environment:
       MYSQL_ROOT_HOST: "%"
-      MYSQL_DATABASE: invest_buildings_db
+      MYSQL_DATABASE: finance_lobby_db
       MYSQL_ROOT_PASSWORD: bruno
-      MYSQL_USER: investbuildings
-      MYSQL_PASSWORD: investbuildings
+      MYSQL_USER: finance_lobby
+      MYSQL_PASSWORD: finance
       SERVICE_TAGS: dev
-      SERVICE_NAME: invest_buildings_db
+      SERVICE_NAME: finance_lobby_db
       DB_HOST: host.docker.internal
     volumes:
       - dbdata:/var/lib/mysql/
