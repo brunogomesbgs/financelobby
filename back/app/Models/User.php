@@ -34,8 +34,6 @@ class User extends Authenticatable
         'remember_token',
     ];
 
-    protected $with = ['type'];
-
     public function isAdmin()
     {
         return $this->is_admin === 1;
