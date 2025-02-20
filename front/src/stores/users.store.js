@@ -91,6 +91,18 @@ export const useUsersStore = defineStore({
             } catch (error) {
                 this.user = { error };
             }
+        },
+        async getByName(name) {
+            this.user = { loading: true };
+            try {
+                const response = await fetchWrapper.post(
+                  `${baseUrl}/search`,
+                  { name: name}
+                );
+                this.user = await response.json();
+            } catch (error) {
+                this.user = { error };
+            }
         }
     }
 });

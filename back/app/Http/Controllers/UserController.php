@@ -130,4 +130,16 @@ class UserController extends Controller
 
         return response()->json(['user' => $user, 'token' => $user->createToken($request->email)->plainTextToken]);
     }
+
+    public function search(Request $request): JsonResponse
+    {
+        try {
+            $result = User::where('name', $request->name)->get();
+        } catch (\Exception $e) {
+            Log::error("User not found: ", ['errors' => $e]);
+            return response()->json("User not found", 404);
+        }
+
+        return response()->json($result);
+    }
 }

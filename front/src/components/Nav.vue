@@ -11,6 +11,7 @@ const { user } = storeToRefs(authStore);
         <div class="navbar-nav" v-if="user">
             <router-link to="/" class="nav-item nav-link">Start</router-link>
             <router-link v-if="user.is_admin === 1" to="/users" class="nav-item nav-link">Users</router-link>
+            <router-link to="/images" class="nav-item nav-link">Image</router-link>
             <button @click="authStore.logout()" class="btn btn-link nav-item nav-link">Exit</button>
         </div>
     </nav>

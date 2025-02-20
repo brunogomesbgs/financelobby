@@ -18,4 +18,5 @@ Route::controller(UserController::class)
         Route::put($id, 'update');
         Route::patch($id, 'updatePassword');
         Route::delete($id, 'destroy');
+        Route::post('/search', 'search');
     });
